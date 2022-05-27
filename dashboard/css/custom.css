@@ -1,0 +1,226 @@
+img[src="../images/logotrust.jpg"]{
+	width: 70px;
+}
+
+.blue-bg {
+	background: linear-gradient(to right, rgba(31, 35, 107), rgba(31, 35, 107, 0.7));
+	padding: 0 15px;
+}
+.declaracion-wrapper {
+	padding: 0 8px 50px 8px !important;
+}
+.declaracion {
+	/*background-image: url('../../assets/images/declaracion.jpg');*/
+	background: linear-gradient(to left, rgba(31, 35, 107, 0.6), rgba(31, 35, 107, 0.8));
+	/*background-color: rgba(127, 36, 103, 0.7);*/
+	object-fit: cover;
+	background-size: cover;
+	padding: 19px 10px;
+	/*margin:0 13px;*/
+}
+
+/*.declaracion::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(127, 36, 103, 0.7);
+	overflow: hidden;
+}*/
+.blue-bg h2 {
+	font-size: 2.25em;
+}
+.declaracion h1 {
+	padding: 12px 0;
+	color: orange;
+	text-align: center;	
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 25px;
+}
+
+.declaracion p {
+	color: white;
+	margin-top: 2em;
+	text-align: center;
+	line-height: 2em;
+	letter-spacing: 1px;
+}
+.declaracion span {
+	color: orange;
+}
+
+@media (max-width: 996px) {
+
+	.declaracion-wrapper {
+		margin-top: 20px;
+	}
+}
+
+/*------------statistics---------------*/
+
+.card{
+	border-radius: 8px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.stat-rank {
+	padding-bottom: 4em;
+	margin: auto;
+}
+.stat-rank h3 {
+	font-weight: lighter;
+	text-align: center;
+}
+.stat-rank p {
+	font-size: 3em;
+	text-align: center;
+}
+.stat-rank  span {
+	text-align: center;
+	display: block;
+	font-weight: lighter !important;
+	font-size: 1.2em;
+}
+
+#new_stat .card-header {
+	color: white;
+	background: linear-gradient(to right, rgba(31, 35, 107, 1), rgba(31, 35, 107, 0.8)) !important;
+}
+
+#new_stat input[disabled] {
+	font-size: 1.17em;
+	color: white;
+	background: linear-gradient(to right, rgba(31, 35, 117,.9), rgba(31, 35, 188,.7)) !important;
+	border-radius: 6px;
+}
+#new_stat input[type = "text"] {
+	pointer-events: none !important;
+}
+#new_stat input[type = "text"].v{
+	pointer-events: none !important;
+	font-size: .97em;
+	font-family: 'roboto';
+}
+#new_stat label {
+	font-size: 1em;
+}
+@media (max-width: 996px) {
+
+	.content-wrapper {
+		padding: 10px !important;
+	}
+	.stat-pic img{
+		max-width: 200px;
+		margin-left: 40px;
+	}
+}
+
+.total-wrapper .total-heading, .purchase, .transfered {
+	background: linear-gradient(to right, rgba(31, 35, 107, 1), rgba(31, 35, 107, 0.8));
+	text-align: center;
+	border-radius: 10px;
+	color: white;
+	font-size: 1.1em;
+	padding: 2px 0;
+}
+
+.nettrad {
+	margin-top: 15px;
+}
+.network, .trading {
+	background: white;
+	padding: 25px 20px;
+	border-radius: 8px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+h4 {
+	font-size: 1rem;
+}
+@media (max-width: 996px) {
+	.total-wrapper .network, .total-wrapper .trading {
+		margin-top: 15px;
+	}
+}
+
+/*----------packages--------------*/
+
+#packages .card{
+	height: 250px;
+	background: linear-gradient(to right, rgba(31, 35, 107, .8), rgba(31, 35, 107, 0.7)) !important;
+}
+#packages .card .card-body {
+	position: relative;
+}
+#packages .card h2, #packages .card h4,  #packages .card i{
+	color: #fff;
+	text-align: center;
+}
+#packages .card h2 {
+	font-size: 1.5em;
+}
+#packages .card h4 {
+	font-size: 2.9em;
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	top: 35%;
+	padding: 13px 0;
+	background: linear-gradient(to right, rgba(31, 35, 97, .8), rgba(31, 35, 97, 0.7)) !important;
+}
+center {
+	color: rgba(255,212,200);
+	cursor: pointer;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding-bottom: 10px;
+}
+
+@media (max-width: 996px) {
+	#packages .card {
+		margin-top: 20px;
+	}
+}
+.modal-body {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+.planned {
+	padding: 15px;
+	border-radius: 7px;
+	background: linear-gradient(to right, rgba(31, 35, 97, .8), rgba(31, 35, 97, 0.7)) !important;
+}
+.selected h4 {
+	font-size: 3rem;
+	color: white;
+	margin-top: 5px;
+}
+.modal-footer {
+	margin-top: 5px !important;
+}
+
+
+.form-check-input {
+	margin-left: 0 !important;
+}
+
+.scan h3, .scan h5, .scan img {
+	margin:auto;
+	text-align: center;
+	margin-bottom: 6px;
+}
+
+.scan h3 {
+	margin-top: 1.21em;
+}
+.scan {
+	padding-bottom: 15px;
+}
+.scan h5 {color: blue;}
+.modal-body ol li {
+	font-size: 1.23em;
+}

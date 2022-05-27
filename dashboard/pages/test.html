@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<select class="selectpicker" data-width="fit" onchange="translateLanguage(this.value);">
+                      <option data-content='<span class="flag-icon flag-icon-us"></span> English' value="English">English</option>
+                      <option  data-content='<span class="flag-icon flag-icon-pt"></span> Portugues' value="Portugues">Portugues</option>
+                      <option  data-content='<span class="flag-icon flag-icon-es"></span> Spanish' value="Spanish">Spanish</option>
+                      <option  data-content='<span class="flag-icon flag-icon-ru"></span> Russia' value="Russia">Russia</option>
+                  </select>
+hello
+<div class="mr-3" id="google_translate_element"></div>
+
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit(){
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+  </script>
+</body>
+</html>
+
+
+<!-- form start content -->
+<div class="row">
+              <div class="col-md-5 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="container">
+                      <div class="row justify-content-between">
+                        <div class="stat-rank col-md-6">
+                          <h3>Rank</h3>
+                          <p class="text-muted">100 %</p>
+                          <span>Current rank</span>
+                          <span class="text-center">Sin Rango</span>
+                        </div>
+                        <div class="stat-pic col-md-6">
+                          <img src="../../assets/images/team_01.jpg" style="width: 200px; height: 220px; object-fit: cover;">
+                        </div>
+                      </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-7 grid-margin ">
+                <div class="total-wrapper">
+                  <div class="total-heading">
+                    Total profits paid
+                  </div>
+                  <div class="nettrad">
+                    <div class="row justify-content-between">
+                      <div class="network col-md-5 col-md-offset-1">
+                        <div class="d-flex justify-content-between">
+                          <h4>Network <br> Paid</h4>
+                          <span class="text-muted">Tether (USDT) 0.00</span>
+                        </div>
+                      </div>
+                      <div class="trading col-md-6">
+                        <div class="trad">
+                          <div class="d-flex justify-content-between">
+                            <h4>Trading Paid</h4>
+                            <span class="text-muted">Tether (USDT) 0.00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+                <div class="total-wrapper mt-5">
+                  <div class="total-heading">
+                    Total Balance
+                  </div>
+                  <div class="nettrad">
+                    <div class="row justify-content-between">
+                      <div class="network col-md-5 col-md-offset-1">
+                        <div class="d-flex justify-content-between">
+                          <h4>Available <br>Balance</h4>
+                          <span class="text-muted">Tether (USDT) 23.70</span>
+                        </div>
+                      </div>
+                      <div class="trading col-md-6">
+                        <div class="trad">
+                          <div class="d-flex justify-content-between">
+                            <h4>Withheld <br> Balance</h4>
+                            <span class="text-muted">Tether (USDT) 0.00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="purchase">
+                  Purchase
+                </div>
+                 <div class="nettrad">
+                    <div class="row justify-content-between">
+                      <div class="network col-md-5 col-md-offset-1">
+                        <div class="d-flex justify-content-between">
+                          <h4>Tether</h4>
+                          <span class="text-muted">Tether (USDT) 140.70</span>
+                        </div>
+                      </div>
+                      <div class="trading col-md-6">
+                        <div class="trad">
+                          <div class="d-flex justify-content-between">
+                            <h4>Active</h4>
+                            <span class="text-muted">Tether (USDT) 3000.00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+              </div>
+              <div class="col-md-6">
+                 <div class="transfered">
+                  Balance Transfered
+                </div>
+                <div class="trading col-md-12 mt-3">
+                  <div class="trad">
+                    <div class="d-flex justify-content-between">
+                      <h4>Balance</h4>
+                      <span class="text-muted">Tether (USDT) 0000.00</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
