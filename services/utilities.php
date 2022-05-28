@@ -5,7 +5,8 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
-require '../../handlers/vendor/autoload.php';
+require '../handlers/vendor/autoload.php';
+require 'init.php';
 
 class Utilities {
 	private $db;
@@ -22,7 +23,7 @@ class Utilities {
 		return $result;
 	}
 
-	public function sendMail ($to, $subject, $messgae) {
+	public function sendMail ($to, $subject, $message) {
 		$mail = new PHPMailer(true);
 		try {
                 //Server settings
@@ -37,14 +38,14 @@ class Utilities {
 
                 //Recipients
 
-                $mail->setFrom('promisedeco24@gmail.com', 'DigitaTranser');
+                $mail->setFrom('promisedeco24@gmail.com', 'DigitaTransfer');
                 $mail->addAddress($to, '');     //Add a recipient
              
                 $msg = "<html>
                 <head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
                     <meta name='viewport' content='width=device-width'>
                     
-                    <title>Thanks for Choosing Luxemcapital</title>
+                    <title>Thanks for Choosing DigitaTransfer</title>
                     <style>
                     
                     @media only screen and (max-width: 620px) {
