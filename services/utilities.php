@@ -225,4 +225,12 @@ class Utilities {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
 	}
+
+	public function logs ($user, $tran_id, $desc, $tran_amt, $slug) {
+		$created_on = date("m-d-Y H:i:s", time());
+		$sql = "INSERT INTO tlogs (username, transaction_id, description, transaction_amt, slug, _time_) VALUES (?,?,?,?,?,?)";
+		$stmt = $this->db->run($sql, [$user, $tran_id, $desc, $tran_amt, $slug, $created_on]);
+		return true;
+	}
+
 }
