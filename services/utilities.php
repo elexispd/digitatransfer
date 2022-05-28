@@ -9,6 +9,7 @@ require '../../handlers/vendor/autoload.php';
 
 class Utilities {
 	private $db;
+	private $msg = [];
 
 	function __construct ($db) {
 		$this->db = $db;
@@ -232,5 +233,34 @@ class Utilities {
 		$stmt = $this->db->run($sql, [$user, $tran_id, $desc, $tran_amt, $slug, $created_on]);
 		return true;
 	}
+
+	public function updateBalance ($tran_id, $user, $amt, $key) {
+		$sql = "SELECT * FROM wallet_tb WHERE $tran_id = ? AND $user = ?";
+		$stmt = $this->db->run($sql, [$tran_id, $user]);
+		$result = $stmt->fetch();
+		$balance = $result["balance"];
+		$c_balance = 0;
+		switch ($key) {
+            case 'add':
+                $c_balance = $balance + $amt;
+                break;
+            case 'minus':
+                $c_balance = $balance - $amt;
+                break;
+            case 'mul':
+                $c_balance = $balance * $amt;
+                break;
+            default:
+                # code...
+                break;
+        }
+        $sql2 = "UPDATE wallet_tb SET balance = ? WHERE transaction_id = ? AND username = ?";
+        $stmt2 = $this->db->run($sql, [$c_balance, $tran_id, $user]);
+	}
+
+	protected function message($key, $value){
+        $this->msg["status"] = $key;
+        $this->msg["message"] = $value;
+    }
 
 }
