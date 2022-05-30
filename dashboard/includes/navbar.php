@@ -6,7 +6,7 @@
     <a class="navbar-brand brand-logo-mini" href="index.php"><img src="../images/logotrust.jpg" alt="logo" /></a>
   </div>
   <div class="navbar-menu-wrapper d-flex align-items-center flex-grow-1">
-    <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Welcome To Betatransfer</h5>
+    <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Welcome To Digitatransfer</h5>
     <ul class="navbar-nav navbar-nav-right ml-auto">
       <!--  -->
       <li class="nav-item dropdown language-dropdown d-none d-sm-flex align-items-center">

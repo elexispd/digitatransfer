@@ -98,8 +98,8 @@ class Auth{
 	                $this->message("success", "Registration is success");
 	                /*this will create the users wallet account*/
 	                $transact_id = time() + rand(1000, 9000);
-	                $sq = "INSERT INTO wallet_tb (username,transact_id,time_stamp,transact_amt,transact_amt_temp) VALUES (?,?,?,?,?)";
-	                $values2 = [$this->username, $transact_id, time(), 0, 0];
+	                $sq = "INSERT INTO wallet_tb (username,transact_id,balance) VALUES (?,?,?)";
+	                $values2 = [$this->username, $transact_id,0];
 	                $stt = $this->db->run($sq, $values2);
 	            } else {
 	                $this->message("failed", "Something went wrong. Try again!");

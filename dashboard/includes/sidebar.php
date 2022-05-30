@@ -7,7 +7,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <ul class="nav">
     <li class="nav-item nav-category">
-      <span class="nav-link text-primary">BETATRANSFER</span>
+      <span class="nav-link text-primary">Digitatransfer</span>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="index.php">

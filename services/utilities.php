@@ -9,8 +9,8 @@ require '../handlers/vendor/autoload.php';
 require 'init.php';
 
 class Utilities {
-	private $db;
-	private $msg = [];
+	public $db;
+	public $msg = [];
 
 	function __construct ($db) {
 		$this->db = $db;
@@ -188,7 +188,7 @@ class Utilities {
                                 <tr>
                                 <td class='content-block' style='font-family: sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; font-size: 12px; color: #999999; text-align: center;'>
                                     <span class='apple-link' style='color: #999999; font-size: 12px; text-align: center;'>If you don't recognize this transaction, please immediately contact User Support <br>
-                                        on support@Betatransfer.com <br><br>
+                                        on support@Digitatransfer.com <br><br>
                                         
                                         Your user ID and password, are confidential and should never be disclosed to anyone.</span>
                                     
@@ -196,7 +196,7 @@ class Utilities {
                                 </tr>
                                 <tr>
                                 <td class='content-block powered-by' style='font-family: sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; font-size: 12px; color: #999999; text-align: center;'>
-                                     <a href='https://Betatransfer.com' style='color: #999999; font-size: 12px; text-align: center; text-decoration: none;'>Betatransfer</a> system generated mail.
+                                     <a href='https://Digitatransfer.com' style='color: #999999; font-size: 12px; text-align: center; text-decoration: none;'>Digitatransfer</a> system generated mail.
                                 
                                 </td>
                                 </tr>
@@ -222,26 +222,26 @@ class Utilities {
             $mail->AltBody = strip_tags($body);
 
             $mail->send();
-            echo 'Message has been sent';
+            // echo 'Message has been sent';
         } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
 	}
 
 	public function logs ($user, $tran_id, $desc, $tran_amt, $slug) {
 		$created_on = date("m-d-Y H:i:s", time());
-		$sql = "INSERT INTO tlogs (username, transaction_id, description, transaction_amt, slug, _time_) VALUES (?,?,?,?,?,?)";
+		$sql = "INSERT INTO tlogs (username, transaction_id, description, transact_amt, slug, _time_) VALUES (?,?,?,?,?,?)";
 		$stmt = $this->db->run($sql, [$user, $tran_id, $desc, $tran_amt, $slug, $created_on]);
 		return true;
 	}
 
-	public function updateBalance ($tran_id, $user, $amt, $key) {
-		$sql = "SELECT * FROM wallet_tb WHERE $tran_id = ? AND $user = ?";
-		$stmt = $this->db->run($sql, [$tran_id, $user]);
-		$result = $stmt->fetch();
-		$balance = $result["balance"];
-		$c_balance = 0;
-		switch ($key) {
+     public function updateBalance ($user, $amt, $key) {
+        $sql = "SELECT * FROM wallet_tb WHERE username = ?";
+        $stmt = $this->db->run($sql, [$user]);
+        $result = $stmt->fetch();
+        $balance = $result["balance"];
+        $c_balance = 0;
+        switch ($key) {
             case 'add':
                 $c_balance = $balance + $amt;
                 break;
@@ -255,11 +255,12 @@ class Utilities {
                 # code...
                 break;
         }
-        $sql2 = "UPDATE wallet_tb SET balance = ? WHERE transaction_id = ? AND username = ?";
-        $stmt2 = $this->db->run($sql, [$c_balance, $tran_id, $user]);
-	}
+        $sql2 = "UPDATE wallet_tb SET balance = ? WHERE  username = ?";
+        $stmt2 = $this->db->run($sql2, [$c_balance,$user]);
+        return $c_balance;
+    }
 
-	protected function message($key, $value){
+	public function message($key, $value){
         $this->msg["status"] = $key;
         $this->msg["message"] = $value;
     }

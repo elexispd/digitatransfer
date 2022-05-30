@@ -1,10 +1,11 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Betatransfer Withdraw</title>
+    <title>Digitatransfer Withdraw</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../vendors/simple-line-icons/css/simple-line-icons.css">
     <link rel="stylesheet" href="../vendors/flag-icon-css/css/flag-icon.min.css">
@@ -40,18 +41,27 @@
                 <div class="card">
                   <div class="card-body">
                     <h2 class="card-title">Withdraw</h2>
-                    <form action="" method="post">
+                    <span class="text-danger"></span>
+                    <form action="../../handlers/general.php" method="post" id="withdraw">
                       <div class="form-group">
                         <label class="form-label mt-3">
                           Amount
                         </label>
                         <input class="form-control metho" type="number" name="amount" id="amount">
+                        <label class="form-label mt-3">
+                          Coin
+                        </label>
+                        <select name="coin" class="form-control"> 
+                          <option value="btc">BTC</option>
+                          <option value="eth">Ethereum</option>
+                          <option value="tron">Tron</option>
+                        </select>
                          <label class="form-label mt-3">
                           Wallet Address
                         </label>
-                        <input class="form-control metho" type="text" name="addr" id="amount">
-                        <input class="form-control metho" type="number" name="user" hidden value="<?php echo $_SESSION["user"]; ?>">
-                        <button type="submit" id="submit" name="transfer" class="btn btn-primary " style="background: linear-gradient(to right, rgba(31, 35, 97, .8), rgba(31, 35, 97, 0.7)) !important; color: white; margin-top:12px;">Transfer</button>
+                        <input class="form-control metho" type="text" name="addr" id="addr">
+                        <input class="form-control metho" type="text" hidden name="user"  value="<?php echo $_SESSION["user"]; ?>">
+                        <button type="submit" id="submit" name="withdraw" class="btn btn-primary " style="background: linear-gradient(to right, rgba(31, 35, 97, .8), rgba(31, 35, 97, 0.7)) !important; color: white; margin-top:12px;">Transfer</button>
                       </div>
                   </div>
                 </div>
@@ -94,6 +104,6 @@
     <!-- End custom js for this page -->
     <!-- sweet alert -->
     <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
-    <script src="../js/custom.js"></script>
+    <script src="../js/general.js"></script>
   </body>
 </html>

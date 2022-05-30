@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Betatransfer Packages</title>
+    <title>Digitatransfer Packages</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../vendors/simple-line-icons/css/simple-line-icons.css">
     <link rel="stylesheet" href="../vendors/flag-icon-css/css/flag-icon.min.css">
@@ -41,7 +41,7 @@
                   <div class="card-body p1">
                     <h2 class="card-title">One</h2>
                     <h4 class="card-title">&euro; 100</h4>
-                    <center><img src="../images/logotrust.jpg" class="mx-auto">Betatransfer</center>
+                    <center><img src="../images/logotrust.jpg" class="mx-auto">Digitatransfer</center>
                   </div>
                 </div>
               </div>
@@ -50,7 +50,7 @@
                   <div class="card-body p2">
                   <h2 class="card-title">Two</h2>
                     <h4 class="card-title">&euro; 500</h4>
-                     <center><img src="../images/logotrust.jpg" class="mx-auto">Betatransfer</center>
+                     <center><img src="../images/logotrust.jpg" class="mx-auto">Digitatransfer</center>
                   </div>
                 </div>
               </div>
@@ -59,7 +59,7 @@
                   <div class="card-body p3">
                   <h2 class="card-title">Three</h2>
                     <h4 class="card-title">&euro; 1000</h4>
-                     <center><img src="../images/logotrust.jpg" class="mx-auto">Betatransfer</center>
+                     <center><img src="../images/logotrust.jpg" class="mx-auto">Digitatransfer</center>
                   </div>
                 </div>
               </div>

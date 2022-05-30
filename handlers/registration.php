@@ -1,8 +1,8 @@
 <?php 
 
-require_once "../services/init.php";
+// require_once "../services/init.php";
 include_once "../services/auth.php";
-include_once "../services/functions.php";
+include_once "../services/withdraw.php";
 
 $db = new Init();
 $user_obj = new Auth($db);
@@ -20,7 +20,7 @@ if (isset($_POST["login"])) {
 
 if (isset($_POST["register"])) {
 	$user_obj = new Auth($db);
-    $user_obj2 = new Betatransfer($db);
+    $withdrawObj = new Withdraw($db);
 
     $first = htmlspecialchars($_POST["name"]);
     $last = htmlspecialchars($_POST["l_name"]);
@@ -49,5 +49,5 @@ if (isset($_POST["register"])) {
 
     $msg= $user_obj->register ($first, $last, $email, $pass, $pass2, $dob, $addr1, $addr2,$city, $province, $code, $country,$phone,$username,$company,$document,$doc_num, $bill_addr, $bill_country, $bill_code, $bill_state, $bill_city);
        echo json_encode($msg);
-       $user_obj2->add_referral($ref, $username);
+       // $user_obj2->add_referral($ref, $username);
 } 

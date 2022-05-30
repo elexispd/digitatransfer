@@ -4,7 +4,7 @@ class Init{
 	function __construct(){
 		$servername = "localhost";
 		$username = "root";
-		$dbName = "betatransfer";
+		$dbName = "digitatransfer";
 		$password = "";
 		try {
 			$dsn = "mysql:host=".$servername.";dbname=".$dbName;

@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/animate.css">
 
-    <title>BetaTransfer - Home</title>
+    <title>Digitatransfer - Home</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -122,7 +122,7 @@ https://templatemo.com/tm-545-finance-business
             <div class="img-fill">
                 <div class="text-content">
                   <h6 class="white">Welcome To </h6>
-                  <h4 class="purple">Betatransferpro</h4>
+                  <h4 class="purple">Digitatransferpro</h4>
                   <a href="#"  class="text-white">WATCH OUR VIDEO</a>
                 </div>
             </div>
@@ -174,7 +174,7 @@ https://templatemo.com/tm-545-finance-business
                   <div class="right-content wow slideInRight" data-wow-delay="0.4s">
                     <span>Who we are</span>
                     <h2>We are leading a strong <em>innovation movement</em> </em> around the world</h2>
-                    <p> Betatransferpro operates in the mining and makes traders in forex and arbitrage. In the created ecosystem you can purchase packages, accommodation and pay with Bitcoin,Usdt and Tron. In addition, it has an intelligent reward system for those who decide to participate in the cryptocurrency management carried out by the company.</p>
+                    <p> Digitatransferpro operates in the mining and makes traders in forex and arbitrage. In the created ecosystem you can purchase packages, accommodation and pay with Bitcoin,Usdt and Tron. In addition, it has an intelligent reward system for those who decide to participate in the cryptocurrency management carried out by the company.</p>
                   </div>
                 </div>
               </div>
@@ -198,7 +198,7 @@ https://templatemo.com/tm-545-finance-business
               <div class="down-content">
                 <h1>01</h1>
                 <h4>REFERRAL PARTNERSHIP PROGRAM</h4>
-                <p>Betatransferpro offers a direct referral commission, in which anyone can attract new members and wishing to receive additional income. You get 10% commission when your referral makes a deposit you will be rewarded with the 10% of the amount.</p>
+                <p>Digitatransferpro offers a direct referral commission, in which anyone can attract new members and wishing to receive additional income. You get 10% commission when your referral makes a deposit you will be rewarded with the 10% of the amount.</p>
               </div>
             </div>
           </div>
@@ -271,7 +271,7 @@ https://templatemo.com/tm-545-finance-business
                     </div>
                   <h4>Valentina Tischenko</h4>
                   <span>Grade CEO</span>
-                  <p>"It used to take too long to make transfers and receive payemts, so i decided to find a service that would help me. When i started cooperation with BETATRANSFER, i realized how good this service is for working with payments. Less hassles on my shoulders. I a very grateful for the indivdual approach and rational solution"</p>
+                  <p>"It used to take too long to make transfers and receive payemts, so i decided to find a service that would help me. When i started cooperation with Digitatransfer, i realized how good this service is for working with payments. Less hassles on my shoulders. I a very grateful for the indivdual approach and rational solution"</p>
                 </div>
               </div>
               
