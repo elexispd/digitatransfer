@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,7 +41,7 @@
                 <div class="card">
                   <div class="card-body">
                       <h2 class="card-title">Transfer</h2>
-                    <form action="" method="post">
+                    <form action="../../handlers/general.php" method="post">
                       <div class="form-group">
                         <label class="form-label mt-3">
                           Username
@@ -50,9 +51,12 @@
                           Amount
                         </label>
                         <input class="form-control metho" type="number" name="amount" id="amount">
-                        <input class="form-control metho" type="text" name="sender" id="sender" hidden>
-                        <input class="form-control metho" type="text" name="sender_id" id="sender" hidden value="<?php echo $_SESSION["user"]; ?>">
-                        <button type="submit" id="submit" name="withdraw" class="btn btn-primary " style="background: linear-gradient(to right, rgba(31, 35, 97, .8), rgba(31, 35, 97, 0.7)) !important; color: white; margin-top:12px;">Transfer</button>
+                        <label class="form-label mt-3">
+                          Description
+                        </label>
+                        <textarea class="form-control" placeholder="Write the purpose of transfer..." name="desc" style="height:180px;"></textarea>
+                        <input class="form-control metho" type="text" name="sender" id="sender" hidden  value="<?php echo $_SESSION["user"]; ?>">
+                        <button type="submit" id="submit" name="transfer" class="btn btn-primary " style="background: linear-gradient(to right, rgba(31, 35, 97, .8), rgba(31, 35, 97, 0.7)) !important; color: white; margin-top:12px;">Transfer</button>
                       </div>
                     </form>
                     </form>

@@ -18,7 +18,6 @@ class Withdraw {
         $this->utilities = $utilities; // assigns all everything to the property
         $this->db = $utilities->db; // assigns only the db connection
 
-
     }   
 
 
@@ -50,7 +49,7 @@ class Withdraw {
                     $this->utilities->logs($username, $transact_id, $desc, $amount, $slug, $created_on);
                 } 
             } else {
-                    $this->utilities->message(1, "insufficient balance");
+                    $this->utilities->message(0, "insufficient balance");
             }
         }
 
@@ -67,7 +66,7 @@ class Withdraw {
                     Coin: $coin <br>
                     Address: $addr
                     <br>
-                    Total balance = &euro;$balance;
+                    Total balance = &euro;$balance
                     <br><br>
 
                     Warm regards. <br>
@@ -82,15 +81,15 @@ class Withdraw {
         $balance = number_format($bal, "2");
          $message = "
                     Hello <b>$name</b>,<br><br>
-                    Your request to withdraw &euro;$amthas been approved. <br><br>
-                    Total balance = &euro;$balance;
+                    Your request to withdraw &euro;$amt has been approved. <br><br>
+                    Total balance = &euro;$balance
                     <br><br>
                     Thank you! for choosing us
 
                     Warm regards. <br>
                     Digitatransfer<br>.
                     ";
-        $subject = "Withdraw request";
+        $subject = "Withdraw Approved";
         $this->utilities->sendMail($to, $subject, $message);
     }
 
@@ -107,24 +106,33 @@ class Withdraw {
         $sql = "SELECT * FROM withdraw_tb WHERE username = ? AND transact_id = ?";
         $stmt = $this->db->run($sql, [$user, $tran_id]);
         $result = $stmt->fetch();
-        $c_balance = $result["balance"];
+        $amount = $result["transact_amt"];
+
+        $c_balance = $this->utilities->updateBalance($user, $amount, "add");
+
+        $toUser = $this->utilities->getUser($user); // fetches uses details. this method is found in Utilities class
+        $to = $toUser["email"];
+        $name = $toUser["first_name"]. " ".$toUser["last_name"];
+
         if ($stmt->rowCount() > 0) {
-            $sql2 = "UPDATE wallet_tb SET transact_status = ? WHERE username = ? AND transact_id = ?";
+            $sql2 = "UPDATE withdraw_tb SET transact_status = ? WHERE username = ? AND transact_id = ?";
             $stmt2 = $this->db->run($sql2, [1, $user, $tran_id]);
             $num = $stmt->rowCount();
             if ($num > 0) {
-                $desc = "Withdrawer request was approved";
+                $desc = "Withdrawal request has been approved";
                 $slug = "withdraw:Approved";
                 $created_on = date("d-m-Y H:i:s", time());
                 $this->utilities->message(1, "withdrawal has been approved");
-                $this->utilities->confirmedMail($to, $name, $amt, $c_balance);
-                $this->utilities->logs($username, $transact_id, $desc, $amount, $slug, $created_on);
+                $this->confirmedMail($to, $name, $amount, $c_balance);
+                $this->utilities->logs($user, $tran_id, $desc, $amount, $slug, $created_on);
+                $this->utilities->message(0, "withdrawal has been approved");
             } else {
                  $this->utilities->message(0, "Something went wrong");
             }
         } else {
             $this->utilities->message(0, "no record available");
         }
+        return  $this->utilities->msg;
     }
 
 }

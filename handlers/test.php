@@ -1,14 +1,14 @@
 <?php 
-$message = "you have successfully registered";
-$to = "promisedeco24@gmail.com";
-$subject = "Registration";
 
-// include_once "../services/init.php";
 include_once "../services/utilities.php";
+include_once "../services/withdraw.php";
+include_once "../services/Transfer.php";
 
 $db = new Init();
-$mail = new Utilities($db);
+$obj2 = new Utilities($db);
+// $obj = new Withdraw($obj2);
+$obj = new Transfer($obj2);
 
-$msg = $mail->getuser("elexis");
+$msg = $obj->approve("elexis", 1661816652, "elex");
 
-echo $msg["email"];
+print_r($msg);
